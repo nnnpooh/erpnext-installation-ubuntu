@@ -164,8 +164,9 @@ I need to become root user but also as access to the python virtual environment.
 - Make sure to set in `erp/sites/common_site_config.json`
 
 ```json
- "maintenance_mode": 0,
- "pause_scheduler": 0,
+{
+  "maintenance_mode": 0,
+  "pause_scheduler": 0
 }
 ```
 
