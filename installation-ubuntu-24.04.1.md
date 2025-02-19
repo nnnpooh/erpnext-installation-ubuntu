@@ -53,6 +53,25 @@ default-character-set = utf8mb4
 - `sudo apt-get install redis-server`
 - `sudo apt-get install xvfb libfontconfig wkhtmltopdf`
 
+### wkhtmltopdf (patched)
+
+- (Updated 2025-02-19) It is recommended that you install `wkhtmltopdf` with version `0.12.6.1 (with patched qt)` in order for PDF from Print Designer to be generated correctly. Here is the way to do it. (If you install using `apt-get`, you will not get the version with `patched qt`.)
+
+```
+wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox_0.12.6.1-3.jammy_amd64.deb && \
+sudo dpkg -i wkhtmltox_0.12.6.1-3.jammy_amd64.deb && \
+sudo cp /usr/local/bin/wkhtmlto* /usr/bin/ && \
+sudo chmod a+x /usr/bin/wk*
+sudo rm wk* && \
+sudo apt --fix-broken install -y
+```
+
+[Source](https://discuss.frappe.io/t/print-designer-issue/117178/6)
+
+- Check the version
+  - `wkhtmltopdf --version`
+  - You should see "wkhtmltopdf 0.12.6.1 (with patched qt)"
+
 ### Node
 
 - `curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash`
