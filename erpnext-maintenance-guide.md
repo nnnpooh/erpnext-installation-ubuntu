@@ -31,13 +31,15 @@
     - `bench --site $SITE_NAME backup --backup-path $BACKUP_FOLDER --with-files --compress`
 
 # Restore site
+> Make sure to create a new site with all apps preinstalled. (Check by `bench --site all list-apps`)
 - Setting
+> Make sure to have another terminal with `bench start`
     - `SITE_NAME=site_name`
     - `DB_FILE=~/x-database.sql.gz`
     - `PRIVATE_FILE=~/x-private-files.tar`
     - `PUBLIC_FILE=~/x-files.tar`
-- `bench --site $SITE_NAME --force restore $DB_FILE --with-private-files $PRIVATE_FILE  --with-public-files ./ $PUBLIC_FILE`
-- `bench migrate`
+- `bench --site $SITE_NAME --force restore $DB_FILE --with-private-files $PRIVATE_FILE  --with-public-files $PUBLIC_FILE`
+- `bench --site $SITENAME migrate`
 
 # Drop site
 `bench drop-site site_name --no-backup`
@@ -52,3 +54,5 @@
     - `sudo supervisorctl status`
 - Check ports
     - `sudo ss -tunlp`
+- Check apps
+    - `bench --site all list-apps`
