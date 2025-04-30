@@ -56,3 +56,5 @@
     - `sudo ss -tunlp`
 - Check apps
     - `bench --site all list-apps`
+- Open Windows explorere from WSL localtion
+    - `explorer.exe .`
