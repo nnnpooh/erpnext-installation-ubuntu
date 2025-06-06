@@ -11,8 +11,9 @@
 # Update
 > Make sure to stop production and have another terminal is opened with `bench start`
 - `bench update --reset`
-- If something goes wrong, you can run `bench --site local migrate`
-  
+- If something goes wrong, you can run
+   - `bench --site local migrate`
+   - `bench --site local set-maintenance-mode off`  
 # Start production
 - Setting
     - `SITE_NAME=site_name`
